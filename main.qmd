@@ -1,0 +1,19 @@
+---
+title: "main"
+format: "html"
+---
+
+Purpose: Create conda env in ramses
+```{bash}
+module purge
+module avail conda # to check if conda is available and the find the path, truncated names works
+module load lang/Miniconda3/23.9.0-0
+# Create conda environment
+conda create -n dreams python==3.11.0 --yes
+conda activate dreams
+
+# Install DreaMS
+cd /projects/cecad/lipidomics/sk/DreaMS
+pip install -e .  
+```
+
