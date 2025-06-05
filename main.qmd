@@ -1,6 +1,9 @@
 ---
 title: "main"
 format: "html"
+jupyter: python3
+jupyter-env: dreams
+jupyter-kernel: dreams
 ---
 
 Purpose: Create conda env in ramses
@@ -18,3 +21,8 @@ cd /projects/cecad/lipidomics/sk/DreaMS
 pip install -e .  
 ```
 
+Purpose: Get the embeddings to test installation
+```{python}
+from dreams.api import dreams_embeddings
+embs = dreams_embeddings('data/examples/example_5_spectra.mgf')
+```
