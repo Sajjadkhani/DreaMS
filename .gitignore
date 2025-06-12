@@ -149,3 +149,7 @@ __pycache__
 *ckpt
 *pt
 *lightning_logs*
+
+# SK
+*.hdf5
+dreams/wandb
