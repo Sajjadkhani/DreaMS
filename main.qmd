@@ -26,3 +26,7 @@ Purpose: Get the embeddings to test installation
 from dreams.api import dreams_embeddings
 embs = dreams_embeddings('data/examples/example_5_spectra.mgf')
 ```
+Purpose: Pre-training in ramses
+```{bash}
+sbatch dreams/training/pre_train_ramses.sh
+```
