@@ -81,5 +81,8 @@ srun --export=ALL --preserve-env python3 training/train.py \
  --pre_norm \
  --graphormer_mz_diffs \
  --ret_order_loss_w 0.2 \
- --no_wandb
+ --no_wandb \
+ --pre_trained_pth "${DREAMS_DIR}/SSL_VAL_4.0/my_pre_training_run/last.ckpt" # Use the last checkpoint as pre-trained model
+
+
 
