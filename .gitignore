@@ -153,3 +153,5 @@ __pycache__
 # SK
 *.hdf5
 dreams/wandb
+*.err
+*.out
