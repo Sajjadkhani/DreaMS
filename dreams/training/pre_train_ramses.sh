@@ -82,7 +82,6 @@ srun --export=ALL --preserve-env python3 training/train.py \
  --graphormer_mz_diffs \
  --ret_order_loss_w 0.2 \
  --no_wandb \
- --pre_trained_pth "${DREAMS_DIR}/SSL_VAL_4.0/my_pre_training_run/last.ckpt" # Use the last checkpoint as pre-trained model
-
+ --num_workers_data 64 # the max--num_workers 96
 
 
