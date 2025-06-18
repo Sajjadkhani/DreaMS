@@ -16,13 +16,13 @@ job_key="my_pre_training_run"
 # Replace `python3 training/train.py` with `srun --export=ALL --preserve-env python3 training/train.py \`
 
 # when executing on a SLURM cluster via `sbatch`.
-srun --export=ALL --preserve-env python3 training/train.py \
+python3 training/train.py \
   --project_name SSL_VAL_4.0 \
   --job_key "${job_key}" \
   --run_name "${job_key}" \
   --frac_masks 0.3 \
   --train_regime pre-training \
-  --dataset_pth "${GEMS_DIR}/GeMS_A/GeMS_A10.hdf5" \
+  --dataset_pth "${GEMS_DIR}/GeMS_A/GeMS_A1_DreaMS_rand50k.hdf5" \
   --val_check_interval 0.1 \
   --train_objective mask_mz_hot \
   --hot_mz_bin_size 0.05 \
@@ -33,8 +33,8 @@ srun --export=ALL --preserve-env python3 training/train.py \
   --ff_fourier_d 512 \
   --ff_out_depth 1 \
   --prec_intens 1.1 \
-  --num_devices 2 \
-  --max_epochs 3000 \
+  --num_devices 1 \
+  --max_epochs 10 \
   --log_every_n_steps 20 \
   --seed 3402 \
   --n_layers 7 \
@@ -42,7 +42,7 @@ srun --export=ALL --preserve-env python3 training/train.py \
   --d_peak 44 \
   --d_fourier 980 \
   --lr 1e-4 \
-  --batch_size 256 \
+  --batch_size 64 \
   --dropout 0.1 \
   --save_top_k -1 \
   --att_dropout 0.1 \
@@ -65,4 +65,4 @@ srun --export=ALL --preserve-env python3 training/train.py \
   --graphormer_mz_diffs \
   --ret_order_loss_w 0.2 \
   --no_wandb \
-  --pre_trained_pth "${DREAMS_DIR}/SSL_VAL_4.0/my_pre_training_run/last.ckpt" # Use the last checkpoint as pre-trained model
+  --num_workers_data 16

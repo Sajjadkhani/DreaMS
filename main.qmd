@@ -26,13 +26,20 @@ Purpose: Get the embeddings to test installation
 from dreams.api import dreams_embeddings
 embs = dreams_embeddings('data/examples/example_5_spectra.mgf')
 ```
+
 Purpose: Pre-training in ramses
 ```{bash}
 sbatch dreams/training/pre_train_ramses.sh
 ```
-Purpose: Downsample hdf5 files
 
+Purpose: Downsample hdf5 files
 ```{bash}
 # Change the size of output dataset in the script
 python  dreams/utils/downsample_hdf5.py data/GeMS/GeMS_A/GeMS_A1_DreaMS_rand50k.hdf5
+```
+
+Purpose: Train smaller dataset in laptop to explore full call stack
+```{bash}
+chmod +x dreams/training/pre_train_ramses_laptop.sh
+./dreams/training/pre_train_ramses_laptop.sh
 ```
