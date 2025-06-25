@@ -29,7 +29,7 @@ cd "${DREAMS_DIR}" || exit 3
 # Run the training script
 # Replace `python3 training/train.py` with `srun --export=ALL --preserve-env python3 training/train.py \`
 # when executing on a SLURM cluster via `sbatch`.
-python3 training/train.py \
+srun --export=ALL --preserve-env python3 training/train.py \
   --project_name MolecularProperties \
   --job_key "my_run_name" \
   --run_name "my_run_name" \

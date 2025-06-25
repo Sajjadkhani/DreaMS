@@ -58,3 +58,18 @@ wget https://zenodo.org/records/10997887/files/ssl_model.ckpt
 chmod +x dreams/training/fine_tune.sh
 ./dreams/training/fine_tune.sh
 ```
+
+Purpose: Finetuning in Ramses
+
+```{bash}
+cd data/GeMS/auxiliary
+# Download the data for finetuning
+wget https://huggingface.co/datasets/roman-bushuiev/GeMS/resolve/main/data/auxiliary/MassSpecGym_MurckoHist_split.hdf5
+# download the model check points
+cd dreams/models/pretrained
+wget https://zenodo.org/records/10997887/files/ssl_model.ckpt
+
+# Run fine-tuning
+chmod +x dreams/training/fine_tune.sh
+sbatch dreams/training/fine_tune_ramses.sh
+```
